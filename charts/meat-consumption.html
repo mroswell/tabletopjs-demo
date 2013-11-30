@@ -15,9 +15,15 @@
 <p id="the-chart"></p>
 </div>
 <script>
-  var forGoogle = [['Country','Consumption']];
+
+// building an array that looks like the data array in
+// https://developers.google.com/chart/interactive/docs/gallery/barchart#SimpleExample
+
+var forGoogle = [['Country','Consumption']];
 var data1;
 
+// this function is called by underscore function in showInfo
+// it successfully creates forGoogle array, but that needs get to the Google Chart API
 function turntoarray(value, key, list) {
 tuple1 = [];
 //      console.log("value...");
@@ -44,6 +50,7 @@ window.onload = function () {
 init();
   drawChart();
 };
+
 
 var public_spreadsheet_url = 'https://docs.google.com/spreadsheet/pub?key=0Ao3Ts9D8bHHpdC1FUTFMWVc3NHFpQ3d2RXU2WWdSVWc&output=html';
 
@@ -73,8 +80,10 @@ var datavalues = _.values(data);
 // console.log(arr);
 console.log(forGoogle);
 }
-  google.load("visualization", "1", {packages: ["corechart"]});
-  console.log('You are here first');
+
+// * Access the Google chart API * /
+google.load("visualization", "1", {packages: ["corechart"]});
+console.log('You are here first');
 
 google.setOnLoadCallback(drawChart);
 
