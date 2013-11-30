@@ -55,9 +55,8 @@ init();
 var public_spreadsheet_url = 'https://docs.google.com/spreadsheet/pub?key=0Ao3Ts9D8bHHpdC1FUTFMWVc3NHFpQ3d2RXU2WWdSVWc&output=html';
 
 function init() {
-// because we're using orderby: 'name' it will sort by the 'name' column
-// and reverse: true will reverse that sort, so it should be in reverse
-// alphabetical order
+// because we're using orderby: 'meatconsumption' it will sort by the 'Meat Consumption' column
+// and reverse: true will reverse that sort, so the countries with the highest meat consumption appear first
 Tabletop.init({
 key: public_spreadsheet_url,
 callback: showInfo,
