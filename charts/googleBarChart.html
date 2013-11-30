@@ -1,0 +1,25 @@
+<html>
+<head>
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <script type="text/javascript">
+    google.load("visualization", "1", {packages:["corechart"]});
+    google.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([ ['Location', 'Meat'],["Kuwait", 119.2], ["Australia", 111.5], ["Luxembourg", 107.9], ["New Zealand", 106.4], ["Austria", 102], ["Argentina", 98.3], ["Spain", 97], ["Israel", 96], ["Denmark", 95.2], ["Canada", 94.3], ["Saint Lucia", 93.6], ["Portugal", 93.4], ["Italy", 90.7], ["Slovenia", 88.3], ["Germany", 88.1], ["Ireland", 87.9], ["Samoa", 87.2], ["France", 86.7], ["Iceland", 86.2], ["Netherlands", 85.5], ["Brazil", 85.3], ["Malta", 84.5], ["Antigua and Barbuda", 84.3], ["United Kingdom", 84.2], ["Czech Republic", 83.4], ["Mongolia", 82.1], ["Sweden", 80.2], ["Lithuania", 78.2], ["Cyprus", 78.1], ["Belgium", 76.9], ["Poland", 76.9], ["Hungary", 76], ["Finland", 74.8], ["Greece", 74.8], ["Switzerland", 74.7], ["Barbados", 74.5], ["Chile", 74.1], ["United Arab Emirates", 73.8], ["Saint Kitts and Nevis", 70.8], ["Dominica", 68.6], ["Gabon", 66.4], ["Croatia", 66.3], ["Norway", 66], ["Romania", 64.7], ["Mexico", 63.8], ["Panama", 63.5], ["Kazakhstan", 62.6], ["Latvia", 61.5], ["Grenada", 61], ["Slovakia", 60.4], ["Estonia", 59.6], ["Jamaica", 59.1], ["Lebanon", 58.8], ["South Africa", 58.6], ["Turkmenistan", 58.6], ["China", 58.2], ["Montenegro", 57.7], ["Ecuador", 56.4], ["Uruguay", 55.3], ["Saudi Arabia", 54.4], ["Dominican Republic", 53.7], ["Bulgaria", 53], ["Malaysia", 52.3], ["Costa Rica", 51.1], ["Cuba", 49.4], ["Mauritius", 49.4], ["Ukraine", 48.5], ["Trinidad and Tobago", 47.7], ["Suriname", 47.5], ["Colombia", 46.5], ["Cape Verde", 46.1], ["Japan", 45.9], ["Armenia", 45.8], ["Serbia", 45.2], ["Albania", 44.1], ["Belize", 42.5], ["Jordan", 42], ["Paraguay", 41.9], ["Guyana", 39], ["Fiji", 38.8], ["Kiribati", 38.5], ["Kyrgyzstan", 36.9], ["Seychelles", 35.6], ["Vanuatu", 35.4], ["Honduras", 34.3], ["Philippines", 33.6], ["Central African Republic", 33.5], ["Libya", 33.5], ["Azerbaijan", 32], ["Morocco", 30.1], ["Mauritania", 29.7], ["Guatemala", 28.8], ["Uzbekistan", 28.4], ["El Salvador", 28.3], ["Namibia", 28.3], ["Bosnia and Herzegovina", 27.9], ["Swaziland", 26.9], ["Botswana", 26.2], ["Tunisia", 25.9], ["Thailand", 25.8], ["Egypt", 25.6], ["Niger", 25.6], ["Georgia", 25.5], ["Nicaragua", 25.3], ["Turkey", 25.3], ["Djibouti", 23.7], ["Angola", 22.4], ["Mali", 22.2], ["Maldives", 21.6], ["Zimbabwe", 21.3], ["Benin", 20.9], ["Peru", 20.8], ["Algeria", 19.5], ["Lesotho", 18.3], ["Yemen", 17.9], ["Kenya", 16.7], ["Cambodia", 16.6], ["Sao Tome and Principe", 16.5], ["Guinea-Bissau", 16.2], ["Senegal", 15.8], ["Haiti", 15.6], ["Burkina Faso", 14.8], ["Madagascar", 14.7], ["Pakistan", 14.7], ["Tajikistan", 14.7], ["Ghana", 13.9], ["Comoros", 13.4], ["Chad", 13], ["Cameroon", 12.7], ["Zambia", 12.3], ["Solomon Islands", 11.9], ["Togo", 11.7], ["Indonesia", 11.6], ["Uganda", 11], ["Liberia", 10.4], ["Nepal", 9.9], ["Nigeria", 8.8], ["Guinea", 8.6], ["Ethiopia", 8.5], ["Malawi", 8.3], ["Mozambique", 7.8], ["Eritrea", 7.7], ["Sierra Leone", 7.3], ["Rwanda", 6.5], ["Sri Lanka", 6.3], ["Burundi", 5.2], ["India", 4.4], ["Bangladesh", 4]]);
+
+      var options = {
+        title: 'Meat Consumption by Country (kg per capita)',
+        vAxis: {textStyle: {fontSize:9}},
+        height:1680
+       // fontSize:10
+      };
+
+      var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+      chart.draw(data, options);
+    }
+  </script>
+</head>
+<body>
+<div id="chart_div" style="width: 900px; height: 500px;"></div>
+</body>
+</html>
