@@ -25,7 +25,7 @@ var data1;
 // this function is called by underscore function in showInfo
 // it successfully creates forGoogle array, but that needs get to the Google Chart API
 function turntoarray(value, key, list) {
-tuple1 = [];
+data1 = [];
 //      console.log("value...");
 //        console.dir(value);
 //        console.log("key...");
@@ -73,7 +73,7 @@ function showInfo(data) {
 document.getElementById("the-chart")
 .innerHTML = "<strong>Countries:</strong> " + [data[0].location, data[1].location, data[2].location].join(", ");
 // console.dir(data);
-//_.each(data, turntoarray);
+_.each(data, turntoarray);
 var datavalues = _.values(data);
  console.log(datavalues);
 // var arr = jQuery.makeArray( data );
