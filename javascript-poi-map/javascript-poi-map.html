@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <body>
+
+  <style> #map {
+    border: solid 1px #CCC;
+    -moz-box-shadow: 2px 2px 7px #999;
+    -webkit-box-shadow: 1px 1px 5px #999;
+    box-shadow: 1px 1px 5px #999;
+  }
+  </style>
+
+  <h3 style='font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial"'>Javascript Points of Interest in the Land of Java</h3>    <div id="map" style="height: 500px; width: 600px"></div>
+
+  <!--<script type="text/javascript" src= "//cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.1.0/tabletop.min.js"></script>-->
+
+  <!--<script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.1.2/handlebars.min.js"></script>-->
+	  <!--<script src='http://api.tiles.mapbox.com/mapbox.js/v1.4.0/mapbox.js'></script>-->
+	  <!--<link href='http://api.tiles.mapbox.com/mapbox.js/v1.4.0/mapbox.css' rel='stylesheet' />-->
+
+    <!--<script type="text/javascript" src="mapsheet.js"></script>-->
+
+  <script type="text/javascript" src="../common/tabletop.js"></script>
+  <script type="text/javascript" src="../common/handlebars.js"></script>
+  <script src='http://api.tiles.mapbox.com/mapbox.js/v1.4.0/mapbox.js'></script>
+  <link href='http://api.tiles.mapbox.com/mapbox.js/v1.4.0/mapbox.css' rel='stylesheet' />
+
+  <script type="text/javascript" src="mapsheet.js"></script>
+
+    <script id="popup-template" type="text/x-handlebars-template">
+      <strong><a href='{{link}}' target='_blank'>{{poi}}</a></strong>
+      <br />{{date}}
+      <br />{{streetaddress}}
+      <br /><a href='{{link}}' target='_blank'>{{link}}</a>
+      <br />{{notes}}
+    </script>
+
+    <script type="text/javascript">
+    	window.onload = function() { init() };
+
+//      var public_spreadsheet_url = 'https://docs.google.com/spreadsheet/pub?key=0AtG9_k99Q_n6dE54Vl83elpDNm9CQmxQRW5KTVZqWUE&output=html';
+     var public_spreadsheet_url = 'https://docs.google.com/spreadsheet/pub?key=0Ao3Ts9D8bHHpdEVFekdkZ0IySjVtSHFRTEVNQXNkMHc&output=html';
+
+      function init() {
+				var source = document.getElementById("popup-template").innerHTML;
+				var template = Handlebars.compile(source);
+				
+        Mapsheet( { key: public_spreadsheet_url,
+											element: "map",
+											provider: Mapsheet.Providers.MapBox,
+											popupTemplate: template
+				});
+      }
+
+//      document.write("The published spreadsheet is located at <a target='_new' href='" + public_spreadsheet_url + "'>" + public_spreadsheet_url + "</a>");
+    </script>
+      The source spreadsheet is located at <a href="https://docs.google.com/spreadsheet/ccc?key=0Ao3Ts9D8bHHpdEVFekdkZ0IySjVtSHFRTEVNQXNkMHc#gid=0">https://docs.google.com/spreadsheet/ccc?key=0Ao3Ts9D8bHHpdEVFekdkZ0IySjVtSHFRTEVNQXNkMHc#gid=0</a>
+
+  </body>
+</html>
