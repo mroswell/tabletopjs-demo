@@ -37,7 +37,8 @@
             callback: showInfo,
             simpleSheet: true,
             orderby: 'meatconsumption',
-            reverse: true
+            reverse: true,
+            parseNumbers:true
         });
     }
 
@@ -51,7 +52,7 @@
         _.each(arrayofObjects, function (countryObj) {
             var data1 = [];
             data1.push(countryObj.location);
-            data1.push(parseFloat(countryObj.meatconsumption));
+            data1.push(countryObj.meatconsumption);
             forGoogle.push(data1);
         });
         drawChart(forGoogle);
@@ -62,7 +63,7 @@
         var countryMeatConsumptionDataForChart = google.visualization.arrayToDataTable(forGoogle);
 
         var options = {
-            title: 'Meat Consumption per Country (Kilograms per Capita)',
+            title: 'Meat Consumption by Country (Kilograms per Capita)',
             height: 1500,
             width:'80%',
             vAxis: { title: 'Country',textStyle: {fontSize:9}, titleTextStyle: {color: 'grey'}, viewWindowMode: 'pretty' },
