@@ -1,32 +1,28 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
 
+<html lang="en">
 <head>
   <meta charset="utf-8">
 
-  <title>
-    reveal.js - The HTML Presentation Framework
-  </title>
-
-  <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-  <meta name="author" content="Hakim El Hattab">
-
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-  <link rel="stylesheet" href="hakimel-reveal.js-31438c8/css/reveal.min.css">
-  <link rel="stylesheet" href="hakimel-reveal.js-31438c8/css/theme/default.css" id="theme">
-
-  <!-- For syntax highlighting -->
-  <link rel="stylesheet" href="hakimel-reveal.js-31438c8/lib/css/zenburn.css">
-
+  <title>Tabletop demo</title>
+  <meta content=
+            "A framework for easily creating beautiful presentations using HTML" name=
+            "description">
+  <meta content="Marjorie Roswell" name="author">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black-translucent" name=
+      "apple-mobile-web-app-status-bar-style">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+        name="viewport">
+  <link href="hakimel-reveal.js-31438c8/css/reveal.min.css" rel="stylesheet">
+  <link href="hakimel-reveal.js-31438c8/css/theme/default.css" id="theme" rel=
+      "stylesheet"><!-- For syntax highlighting -->
+  <!--<link href="hakimel-reveal.js-31438c8/lib/css/zenburn.css" rel="stylesheet">-->
   <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+
   <script>
     document.write( '<link rel="stylesheet" href="hakimel-reveal.js-31438c8/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
   </script>
-
   <!--[if lt IE 9]>
   <script src="hakimel-reveal.js-31438c8/lib/js/html5shiv.js">
   </script>
@@ -34,329 +30,194 @@
 </head>
 
 <body>
-
 <div class="reveal">
-
 <!-- Any section element inside of this container is displayed as a slide -->
+
 <div class="slides">
 <section>
-  <h1 style="text-transform:none">
-    TabletopJS
-  </h1>
-  <h3>
-    A read-only, JavaScript CMS
-    <br>
-    that you can edit through Google Docs
-  </h3>
-  <h4 style="text-transform:none">
-    @mroswell
-  </h4>
+  <h1 style="text-transform:none">TabletopJS</h1>
+
+  <h3>A read-only, JavaScript CMS<br>
+    that you can edit through Google Docs</h3>
+
+  <h4 style="text-transform:none">@mroswell</h4>
 </section>
+
 <section>
-  <h1 style="text-transform:none">
-    TabletopJS Demos
-  </h1>
+  <h1 style="text-transform:none">TabletopJS Demos</h1>
+
   <ul>
-    <li>
-      <a target="_blank" href="monsanto-schmeiser-timeline/monsanto-schmeiser-timeline.html">
-        Timeline: Monsanto vs. Percy Schmeiser
-      </a>
+    <li><a href=
+               "monsanto-schmeiser-timeline/monsanto-schmeiser-timeline.html"
+           target="_blank">Timeline: Monsanto vs. Percy Schmeiser</a></li>
+
+    <li><a>Map: Javascript Points of Interest</a></li>
+
+    <li><a href="charts/meat-consumption-by-country.html" target=
+        "_blank">Chart: Meat Consumption by Country</a></li>
+
+    <li><a href="charts/meat-consumption-by-country-map.html" target=
+        "_blank">Map: Meat Consumption by Country</a></li>
+
+    <li>Live Code: Bicycle Website</li>
+  </ul>
+</section>
+
+<section>
+  <h1 style="text-transform:none">TabletopJS</h1>
+
+  <h3 style="text-transform:none"><a href=
+                                         "http://github.com/jsoma/tabletop" target=
+                                         "_blank">http://github.com/jsoma/tabletop</a></h3>
+</section>
+
+<section>
+  <h1 style="text-transform:none">TabletopJS Demos</h1>
+
+  <ul>
+    <li><a href=
+               "monsanto-schmeiser-timeline/monsanto-schmeiser-timeline.html"
+           target="_blank">Timeline: Monsanto vs. Percy Schmeiser</a>
+      <span class="fragment roll-in">- Timeline Setter</span></li>
+
+    <li><a>Map: Javascript Points of Interest</a> <span class=
+                                                            "fragment roll-in">- Mapsheet</span></li>
+
+    <li><a href="charts/meat-consumption-by-country.html" target=
+        "_blank">Chart: Meat Consumption by Country</a> <span class=
+                                                                  "fragment roll-in">- Simple</span></li>
+
+    <li><a href="charts/meat-consumption-by-country-map.html" target=
+        "_blank">Map: Meat Consumption by Country</a> <span class=
+                                                                "fragment roll-in">- Simple</span></li>
+
+    <li>Live Code: Bicycle Website <span class="fragment roll-in">-
+          Handlebars</span></li>
+  </ul>
+</section>
+
+<section>
+  <h2><a href=
+             "monsanto-schmeiser-timeline/monsanto-schmeiser-timeline.html" target=
+             "_blank">Timeline:<br>
+    Monsanto vs. Percy Schmeiser</a></h2>
+
+  <ul>
+    <li>Original data source:&nbsp;<br>
+      <a href=
+             "http://www.cooperativeresearch.org/timeline.jsp?timeline=seeds_tmln&amp;seeds_legal_actions=seeds_legalMonsantoVSchmeiser"
+         target="_blank"></a>
+            <pre><code>http://www.cooperativeresearch.org/timeline.jsp?timeline=seeds_tmln&amp;seeds_legal_actions=seeds_legalMonsantoVSchmeiser</code></pre>
     </li>
-    <li>
-      <a>
-        Map: Javascript Points of Interest
-      </a>
+
+    <li>Spreadsheet:<br>
+      <a href=
+             "https://docs.google.com/spreadsheet/ccc?key=0Ao3Ts9D8bHHpdFduU1A3eEtobXcxRXBtQzZkS0pSc2c&amp;usp=drive_web#gid=0"
+         target="_blank"></a>
+            <pre><code>https://docs.google.com/spreadsheet/ccc?key=0Ao3Ts9D8bHHpdFduU1A3eEtobXcxRXBtQzZkS0pSc2c&amp;usp=drive_web#gid=0</code></pre>
     </li>
-    <li>
-      <a target="_blank" href="charts/meat-consumption-by-country.html">
-        Chart: Meat Consumption by Country
-      </a>
+
+    <li>Public Spreadsheet URL: <br>
+      <a href=
+          "https://docs.google.com/spreadsheet/pub?key=0Ao3Ts9D8bHHpdFduU1A3eEtobXcxRXBtQzZkS0pSc2c&amp;output=html"
+                                   target="_blank"></a>
+            <pre><code>https://docs.google.com/spreadsheet/pub?key=0Ao3Ts9D8bHHpdFduU1A3eEtobXcxRXBtQzZkS0pSc2c&amp;output=html</code></pre>
     </li>
-    <li>
-      <a target="_blank" href="charts/meat-consumption-by-country-map.html">
-        Map: Meat Consumption by Country
-      </a>
-    </li>
-    <li>
-      Live Code: Bicycle Website
+
+    <li>Result:<br>
+    <a href=
+        "http://localhost:63342/tabletopjs-demo/monsanto-schmeiser-timeline/monsanto-schmeiser-timeline.html"
+          target="_blank"></a>
+        <pre><code>http://localhost:63342/tabletopjs-demo/monsanto-schmeiser-timeline/monsanto-schmeiser-timeline.html</code></pre>
     </li>
   </ul>
 </section>
 
 <section>
-  <h1 style="text-transform:none">
-    TabletopJS
-  </h1>
-  <h3 style="text-transform:none">
-    <a target="_blank" href="http://github.com/jsoma/tabletop">
-      http://github.com/jsoma/tabletop
-    </a>
-  </h3>
-</section>
+  <h2>Prepare your spreadsheet</h2>
 
-<section>
-  <h1 style="text-transform:none">
-    TabletopJS Demos
-  </h1>
   <ul>
-    <li>
-      <a target="_blank" href="monsanto-schmeiser-timeline/monsanto-schmeiser-timeline.html">
-        Timeline: Monsanto vs. Percy Schmeiser
-      </a>
-              
-              <span class="fragment roll-in">
-                - Timeline Setter
-              </span>
+    <li>Have or create a Google Account</li>
 
-    </li>
-    <li>
-      <a>
-        Map: Javascript Points of Interest
-      </a>
-              
-              <span class="fragment roll-in">
-                - Mapsheet
-              </span>
-    </li>
-    <li>
-      <a target="_blank" href="charts/meat-consumption-by-country.html">
-        Chart: Meat Consumption by Country
-      </a>
-              
-              <span class="fragment roll-in">
-                - Simple
-              </span>
-    </li>
-    <li>
-      <a target="_blank" href="charts/meat-consumption-by-country-map.html">
-        Map: Meat Consumption by Country
-      </a>
-              <span class="fragment roll-in">
-                - Simple
-              </span>
-    </li>
-    <li>
-      Live Code: Bicycle Website
-              <span class="fragment roll-in">
-                - Handlebars
-              </span>
-    </li>
-  </ul>
-</section>
-<section>
-  <h2>
-    <a target="_blank" href="monsanto-schmeiser-timeline/monsanto-schmeiser-timeline.html">
-      Timeline:
-      <br>
-      Monsanto vs. Percy Schmeiser
-    </a>
-  </h2>
-  <ul>
-    <li>
-      Original data source:&nbsp;
-      <br>
-      <a target="_blank" href="http://www.cooperativeresearch.org/timeline.jsp?timeline=seeds_tmln&amp;seeds_legal_actions=seeds_legalMonsantoVSchmeiser">
-                <pre>
-<code>
-  http://www.cooperativeresearch.org/timeline.jsp?timeline=seeds_tmln&amp;seeds_legal_actions=seeds_legalMonsantoVSchmeiser
-</code>
+    <li>Create a spreadsheet at drive.google.com</li>
 
-</pre>
-      </a>
-    </li>
-    <li>
-      Spreadsheet:
-      <br>
-      <a target="_blank" href="https://docs.google.com/spreadsheet/ccc?key=0Ao3Ts9D8bHHpdFduU1A3eEtobXcxRXBtQzZkS0pSc2c&amp;usp=drive_web#gid=0">
-                          <pre>
-<code>
-  https://docs.google.com/spreadsheet/ccc?key=0Ao3Ts9D8bHHpdFduU1A3eEtobXcxRXBtQzZkS0pSc2c&amp;usp=drive_web#gid=0
-</code>
-</pre>
-      </a>
-    </li>
-    <li>
-      Public Spreadsheet URL:
-      <a target="_blank" href="https://docs.google.com/spreadsheet/pub?key=0Ao3Ts9D8bHHpdFduU1A3eEtobXcxRXBtQzZkS0pSc2c&amp;output=html">
-                          <pre>
-<code>
-  https://docs.google.com/spreadsheet/pub?key=0Ao3Ts9D8bHHpdFduU1A3eEtobXcxRXBtQzZkS0pSc2c&amp;output=html
-</code>
-</pre>
-      </a>
-    </li>
-    <li>
-      Result:
-    </li>
-  </ul>
-  <a target="_blank" href="http://localhost:63342/tabletopjs-demo/monsanto-schmeiser-timeline/monsanto-schmeiser-timeline.html">
-                    <pre>
-<code>
-  http://localhost:63342/tabletopjs-demo/monsanto-schmeiser-timeline/monsanto-schmeiser-timeline.html
-</code>
-</pre>
-  </a>
+    <li>File &gt; Publish to the web &gt; Start Publishing</li>
 
-</section>
-
-<section>
-  <h2>
-    Prepare your spreadsheet
-  </h2>
-  <ul>
-    <li>
-      Have or create a Google Account
-    </li>
-    <li>
-      Create a spreadsheet at drive.google.com
-    </li>
-    <li>
-      File >
-      Publish to the web >
-      Start Publishing
-    </li>
-    <li>
-      Copy the URL
-    </li>
+    <li>Copy the URL</li>
   </ul>
 </section>
 
-
 <section>
-  <h2>
-    <a target="_blank" href="">
-      Map:
-      <br>
-      Javascript Points of Interest
-    </a>
-  </h2>
-  <ul>
+  <h2><a href="" target="_blank">Map:<br>
+    Javascript Points of Interest</a></h2>
+
+  <div style="margin-left: 2em">
     <ul>
-      <li>
-        Original data source:&nbsp;
-        <br>
-        <a target="_blank" href="http://www.meetup.com/seattlejs/">
-                        <pre>
-<code>
-  http://www.meetup.com/seattlejs/
-</code>
+      <li>Original data source:&nbsp;<br>
+        <a href="http://www.meetup.com/seattlejs/" target="_blank">
+          <pre><code>http://www.meetup.com/seattlejs/</code></pre></a>
+      </li>
 
-</pre>
-        </a>
+      <li>Spreadsheet:<br>
+        <a href=
+               "https://docs.google.com/spreadsheet/ccc?key=0Ao3Ts9D8bHHpdEVFekdkZ0IySjVtSHFRTEVNQXNkMHc&amp;usp=drive_web#gid=0" target="_blank">
+              <pre><code> https://docs.google.com/spreadsheet/ccc?key=0Ao3Ts9D8bHHpdEVFekdkZ0IySjVtSHFRTEVNQXNkMHc&amp;usp=drive_web#gid=0 </code></pre></a>
       </li>
-      <li>
-        Spreadsheet:
-        <br>
-        <a target="_blank" href="https://docs.google.com/spreadsheet/ccc?key=0Ao3Ts9D8bHHpdEVFekdkZ0IySjVtSHFRTEVNQXNkMHc&usp=drive_web#gid=0">
-                              <pre>
-<code>
-  https://docs.google.com/spreadsheet/ccc?key=0Ao3Ts9D8bHHpdEVFekdkZ0IySjVtSHFRTEVNQXNkMHc&usp=drive_web#gid=0
-</code>
-</pre>
-        </a>
+
+      <li>Public Spreadsheet URL: <a href="https://docs.google.com/spreadsheet/pub?key=0Ao3Ts9D8bHHpdEVFekdkZ0IySjVtSHFRTEVNQXNkMHc&amp;output=html" target="_blank">
+        <pre><code> https://docs.google.com/spreadsheet/pub?key=0Ao3Ts9D8bHHpdEVFekdkZ0IySjVtSHFRTEVNQXNkMHc&amp;output=html</code></pre></a>
       </li>
-      <li>
-        Public Spreadsheet URL:
-        <a target="_blank" href="https://docs.google.com/spreadsheet/pub?key=0Ao3Ts9D8bHHpdEVFekdkZ0IySjVtSHFRTEVNQXNkMHc&output=html">
-                              <pre>
-<code>
-  https://docs.google.com/spreadsheet/pub?key=0Ao3Ts9D8bHHpdEVFekdkZ0IySjVtSHFRTEVNQXNkMHc&output=html
-</code>
-</pre>
-        </a>
-      </li>
-      <li>
-        Result:
-        <br>
-        <a target="_blank" href="http://localhost:63342/tabletopjs-demo/monsanto-schmeiser-timeline/monsanto-schmeiser-timeline.html">
-                              <pre>
-<code>
-  http://localhost:63342/tabletopjs-demo/javascript-poi-map/javascript-poi-map.html
-</code>
-</pre>
-        </a>
+
+      <li>Result:<br>
+        <a href=
+               "http://localhost:63342/tabletopjs-demo/monsanto-schmeiser-timeline/monsanto-schmeiser-timeline.html"
+           target="_blank">
+              <pre> <code> http://localhost:63342/tabletopjs-demo/javascript-poi-map/javascript-poi-map.html</code></pre></a>
       </li>
     </ul>
-  </ul>
-
-
+  </div>
 </section>
-<section>
-  <h2>
-    <a target="_blank" href="">
-      Map:
-      <br>
-      Javascript Points of Interest
-    </a>
-  </h2>
-  <ul>
-    <ul>
-      <li>
-        Original data source:&nbsp;
-        <br>
-        <a target="_blank" href="http://www.meetup.com/seattlejs/">
-                        <pre>
-<code>
-  http://www.meetup.com/seattlejs/
-</code>
 
-</pre>
-        </a>
+<section>
+  <h2><a href="" target="_blank">Map:<br>
+    Javascript Points of Interest</a></h2>
+
+  <div style="margin-left: 2em">
+    <ul>
+      <li>Original data source:&nbsp;<br>
+        <a href="http://www.meetup.com/seattlejs/" target="_blank">
+        <pre><code>http://www.meetup.com/seattlejs/</code></pre></a>
       </li>
-      <li>
-        Spreadsheet:
-        <br>
-        <a target="_blank" href="https://docs.google.com/spreadsheet/ccc?key=0Ao3Ts9D8bHHpdEVFekdkZ0IySjVtSHFRTEVNQXNkMHc&usp=drive_web#gid=0">
-                              <pre>
-<code>
-  https://docs.google.com/spreadsheet/ccc?key=0Ao3Ts9D8bHHpdEVFekdkZ0IySjVtSHFRTEVNQXNkMHc&usp=drive_web#gid=0
-</code>
-</pre>
-        </a>
+
+      <li>Spreadsheet:<br>
+        <a href=
+               "https://docs.google.com/spreadsheet/ccc?key=0Ao3Ts9D8bHHpdEVFekdkZ0IySjVtSHFRTEVNQXNkMHc&amp;usp=drive_web#gid=0"
+           target="_blank">
+              <pre><code>https://docs.google.com/spreadsheet/ccc?key=0Ao3Ts9D8bHHpdEVFekdkZ0IySjVtSHFRTEVNQXNkMHc&amp;usp=drive_web#gid=0</code></pre></a>
       </li>
-      <li>
-        Public Spreadsheet URL:
-        <a target="_blank" href="https://docs.google.com/spreadsheet/pub?key=0Ao3Ts9D8bHHpdEVFekdkZ0IySjVtSHFRTEVNQXNkMHc&output=html">
-                              <pre>
-<code>
-  https://docs.google.com/spreadsheet/pub?key=0Ao3Ts9D8bHHpdEVFekdkZ0IySjVtSHFRTEVNQXNkMHc&output=html
-</code>
-</pre>
-        </a>
+
+      <li>Public Spreadsheet URL:
+        <a href=
+               "https://docs.google.com/spreadsheet/pub?key=0Ao3Ts9D8bHHpdEVFekdkZ0IySjVtSHFRTEVNQXNkMHc&amp;output=html"
+                                     target="_blank">
+              <pre><code>https://docs.google.com/spreadsheet/pub?key=0Ao3Ts9D8bHHpdEVFekdkZ0IySjVtSHFRTEVNQXNkMHc&amp;output=html</code></pre></a>
       </li>
-      <li>
-        Result:
-        <br>
-        <a target="_blank" href="http://localhost:63342/tabletopjs-demo/monsanto-schmeiser-timeline/monsanto-schmeiser-timeline.html">
-                              <pre>
-<code>
-  http://localhost:63342/tabletopjs-demo/javascript-poi-map/javascript-poi-map.html
-</code>
-</pre>
-        </a>
+
+      <li>Result:<br>
+        <a href=
+               "http://localhost:63342/tabletopjs-demo/monsanto-schmeiser-timeline/monsanto-schmeiser-timeline.html"
+           target="_blank">
+              <pre><code>http://localhost:63342/tabletopjs-demo/javascript-poi-map/javascript-poi-map.html</code></pre></a>
       </li>
     </ul>
-  </ul>
-
-
+  </div>
 </section>
+
 <section>
-  <h2>
-    Title
-  </h2>
+  <h2>Title</h2>
 </section>
 </div>
-
-</div>
-
-</div>
-
-<script src="hakimel-reveal.js-31438c8/lib/js/head.min.js">
-</script>
-<script src="hakimel-reveal.js-31438c8/js/reveal.min.js">
-</script>
-
-<script>
+</div><script src="hakimel-reveal.js-31438c8/lib/js/head.min.js"></script><script src="hakimel-reveal.js-31438c8/js/reveal.min.js"></script><script>
 
   // Full list of configuration options available here:
   // https://github.com/hakimel/reveal.js#configuration
@@ -375,37 +236,37 @@
         // Optional libraries used to extend on reveal.js
         dependencies: [
           {
-            src: 'lib/js/classList.js', condition: function() {
+            src: 'hakimel-reveal.js-31438c8/lib/js/classList.js', condition: function() {
             return !document.body.classList;
           }
           }
           ,
           {
-            src: 'plugin/markdown/marked.js', condition: function() {
+            src: 'hakimel-reveal.js-31438c8/plugin/markdown/marked.js', condition: function() {
             return !!document.querySelector( '[data-markdown]' );
           }
           }
           ,
           {
-            src: 'plugin/markdown/markdown.js', condition: function() {
+            src: 'hakimel-reveal.js-31438c8/plugin/markdown/markdown.js', condition: function() {
             return !!document.querySelector( '[data-markdown]' );
           }
           }
           ,
+//          {
+//            src: 'hakimel-reveal.js-31438c8/plugin/highlight/highlight.js', async: true, callback: function() {
+//            hljs.initHighlightingOnLoad();
+//          }
+//          }
+//          ,
           {
-            src: 'plugin/highlight/highlight.js', async: true, callback: function() {
-            hljs.initHighlightingOnLoad();
-          }
-          }
-          ,
-          {
-            src: 'plugin/zoom-js/zoom.js', async: true, condition: function() {
+            src: 'hakimel-reveal.js-31438c8/plugin/zoom-js/zoom.js', async: true, condition: function() {
             return !!document.body.classList;
           }
           }
           ,
           {
-            src: 'plugin/notes/notes.js', async: true, condition: function() {
+            src: 'hakimel-reveal.js-31438c8/plugin/notes/notes.js', async: true, condition: function() {
             return !!document.body.classList;
           }
           }
@@ -414,6 +275,5 @@
   );
 
 </script>
-
 </body>
 </html>
