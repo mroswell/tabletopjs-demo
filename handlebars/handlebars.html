@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="cycle.css" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<h1>Handlebars: The Bike Shop</h1>
+
+<div id="content"></div>
+
+<script id="cycleshop-template" type="text/x-handlebars-template">
+  {{#if pedalmotive}} <div class="entry" style="height:auto;">
+  <h2>{{pedalmotive}}</h2>
+  <img src="{{imgurl}}" alt=""/>
+  <div class="body">
+    {{{text}}}
+  </div>
+</div>
+  {{/if}}
+  {{#unless pedalmotive}}<img src="{{imgurl}}" alt=""/>{{/unless}}
+
+</script>
+
+<!-- Don't need jQuery for Tabletop, but using it for this example -->
+<script type="text/javascript" src="handlebars.js"></script>
+<!--<script type="text/javascript" src="../common/jquery.js"></script>-->
+<!--<script type="text/javascript" src="../../src/tabletop.js"></script>-->
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript" src= "//cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.1.0/tabletop.min.js"></script>
+
+
+<script type="text/javascript">
+  var public_spreadsheet_url = 'https://docs.google.com/spreadsheet/pub?key=0Ao3Ts9D8bHHpdEJ1UEg3REZwRklxWnBIb0pfeV9yeHc&output=html';
+
+  $(document).ready( function() {
+    Tabletop.init( { key: public_spreadsheet_url,
+      callback: showInfo,
+      parseNumbers: true } );
+  });
+
+  function showInfo(data, tabletop) {
+    var source   = $("#cycleshop-template").html();
+    var template = Handlebars.compile(source);
+
+    $.each( tabletop.sheets("SiteContent").all(), function(i, cycleshop) {
+      var html = template(cycleshop);
+      $("#content").append(html);
+    });
+  }
+
+  document.write("The published spreadsheet is located at <a target='_new' href='" + public_spreadsheet_url + "'>" + public_spreadsheet_url + "</a>");
+</script>
+</body>
+</html>
