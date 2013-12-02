@@ -27,18 +27,18 @@
   function turntoarray(value, key, list) {
     data1 = [];
 //      console.log("value...");
-//        console.dir(value);
-//        console.log("key...");
-//        console.log(key);
-//        console.log("list...");
-//        console.dir(list);
-//        console.log(value.meatconsumption);
-//        console.log(value.location);
+//      console.dir(value);
+//      console.log("key...");
+//      console.log(key);
+//      console.log("list...");
+//      console.dir(list);
+//      console.log(value.meatconsumption);
+//      console.log(value.location);
     data1.push(value.location);
     data1.push(parseFloat(value.meatconsumption));
     console.log(data1);
     forGoogle.push(data1);
-    return forGoogle;
+    // return forGoogle;
 //console.log("HERE");
 //        console.log("value: "+value   + " key: " +" list: " +list);
 //return forGoogle;
@@ -59,7 +59,7 @@
 // and reverse: true will reverse that sort, so the countries with the highest meat consumption appear first
     Tabletop.init({
       key: public_spreadsheet_url,
-      callback: showInfo,
+      callback: function() {showInfo(forGoogle)},
       simpleSheet: true,
       orderby: 'meatconsumption',
       reverse: true
@@ -69,9 +69,11 @@
   function showInfo(data) {
 
 // data comes through as a simple array since simpleSheet is turned on
+      console.dir(data);
+
+      // console.log(data[0].location)
     document.getElementById("the-chart")
-        .innerHTML = "<strong>Countries:</strong> " + [data[0].location, data[1].location, data[2].location].join(", ");
-// console.dir(data);
+        .innerHTML = "<strong>Countries:</strong> " + [ data[1].location, data[2].location].join(", ");
     _.each(data, turntoarray);
     var datavalues = _.values(data);
     console.log(datavalues);
