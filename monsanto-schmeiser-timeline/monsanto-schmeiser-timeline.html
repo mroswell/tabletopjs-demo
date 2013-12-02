@@ -1,47 +1,48 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link href="timeline_setter.css" media="screen" rel="stylesheet" type="text/css" />
-  </head>
-  <body>
+<head>
+  <link href="timeline_setter.css" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body>
 
-    <div id="timeline"></div>
-    <!--jQuery 1.10.1 does not seem to work with timeline_setter-->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="http://documentcloud.github.io/underscore/underscore-min.js"></script>
-    <script type="text/javascript" src="timeline_setter.js"></script>
-    <script type="text/javascript" src= "//cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.1.0/tabletop.min.js"></script>
+<div id="timeline"></div>
+<!--jQuery 1.10.1 does not seem to work with timeline_setter-->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="http://documentcloud.github.io/underscore/underscore-min.js"></script>
+<script type="text/javascript" src="timeline_setter.js"></script>
+<script type="text/javascript" src= "//cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.1.0/tabletop.min.js"></script>
 
 
-    <script type="text/javascript">
-      var public_spreadsheet_url = "https://docs.google.com/spreadsheet/pub?key=0Ao3Ts9D8bHHpdFduU1A3eEtobXcxRXBtQzZkS0pSc2c&output=html"
+<script type="text/javascript">
+  var public_spreadsheet_url = "https://docs.google.com/spreadsheet/pub?key=0Ao3Ts9D8bHHpdFduU1A3eEtobXcxRXBtQzZkS0pSc2c&output=html"
 
-      $(document).ready( function() {
-         /* 
-          Need to post-process elements because Google Spreadsheets abbreviates 
-            'display_date' column as 'displaydate' and you need to parse the date
-            into the 'timestamp' field for TimelineSetter
-          simpleSheet: true sends array of rows to callback, so you don't need to
-            do the whole Tabletop.sheets('Sheet1').all() thing.
-        */
-        Tabletop.init( { key: public_spreadsheet_url,
-                         callback: drawTimeline,
-                         simpleSheet: true,
-                         postProcess: function(element) {
-                           element["display_date"] = element["displaydate"];
-                           element["timestamp"] = Date.parse( element["date"] );
-                         } 
-        })
-      })
-        
-      function drawTimeline(data) {
-        var currentTimeline = TimelineSetter.Timeline.boot(
-          data,
-          {"container":"#timeline","interval":""}
-        );
+  $(document).ready(function () {
+    /*
+     Need to post-process elements because Google Spreadsheets abbreviates
+     'display_date' column as 'displaydate' and you need to parse the date
+     into the 'timestamp' field for TimelineSetter
+     simpleSheet: true sends array of rows to callback, so you don't need to
+     do the whole Tabletop.sheets('Sheet1').all() thing.
+     */
+    Tabletop.init({
+      key: public_spreadsheet_url,
+      callback: drawTimeline,
+      simpleSheet: true,
+      postProcess: function (element) {
+        element["display_date"] = element["displaydate"];
+        element["timestamp"] = Date.parse(element["date"]);
       }
+    })
+  });
 
-    document.write("The published spreadsheet is located at <a target='_new' href='" + public_spreadsheet_url + "'>" + public_spreadsheet_url + "</a>");
-    </script>
-  </body>
+  function drawTimeline(data) {
+    var currentTimeline = TimelineSetter.Timeline.boot(
+        data,
+        {"container":"#timeline","interval":""}
+    );
+  }
+
+  document.write("The published spreadsheet is located at <a target='_new' href='" + public_spreadsheet_url + "'>" + public_spreadsheet_url + "</a>");
+</script>
+</body>
 </html>

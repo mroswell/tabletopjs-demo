@@ -1,43 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Javascript Points of Interest in the Land of Java</title>
-    <link rel="stylesheet" href="style.css"/>
-    <script type="text/javascript" src="../common/tabletop.js"></script>
-    <script type="text/javascript" src="../common/handlebars.js"></script>
-    <script src='http://api.tiles.mapbox.com/mapbox.js/v1.4.0/mapbox.js'></script>
-    <link href='http://api.tiles.mapbox.com/mapbox.js/v1.4.0/mapbox.css' rel='stylesheet' />
-    <script type="text/javascript" src="mapsheet.js"></script>
+  <title>Javascript Points of Interest in the Land of Java</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script type="text/javascript" src="../common/tabletop.js"></script>
+  <script type="text/javascript" src="../common/handlebars.js"></script>
+  <script src='http://api.tiles.mapbox.com/mapbox.js/v1.4.0/mapbox.js'></script>
+  <link href='http://api.tiles.mapbox.com/mapbox.js/v1.4.0/mapbox.css' rel='stylesheet' />
+  <script type="text/javascript" src="mapsheet.js"></script>
 </head>
 <body>
 <h3>Javascript Points of Interest in the Land of Java</h3>
 <div id="map" style="height: 500px; width: 600px"></div>
 
 <script id="popup-template" type="text/x-handlebars-template">
-    <a href='{{link}}' target='_blank'><strong>{{poi}}</strong></a>
-    <br />{{date}}
-    <br />{{streetaddress}}
-    <br /><a href='{{link}}' target='_blank'>{{link}}</a>
-    <br />{{notes}}
+  <a href='{{link}}' target='_blank'><strong>{{poi}}</strong></a>
+  <br />{{date}}
+  <br />{{streetaddress}}
+  <br /><a href='{{link}}' target='_blank'>{{link}}</a>
+  <br />{{notes}}
 </script>
 
 <script type="text/javascript">
-    window.onload = function() { init() };
+  window.onload = function() { init() };
 
-    var public_spreadsheet_url = 'https://docs.google.com/spreadsheet/pub?key=0Ao3Ts9D8bHHpdEVFekdkZ0IySjVtSHFRTEVNQXNkMHc&output=html';
+  var public_spreadsheet_url = 'https://docs.google.com/spreadsheet/pub?key=0Ao3Ts9D8bHHpdEVFekdkZ0IySjVtSHFRTEVNQXNkMHc&output=html';
 
-    function init() {
-        var source = document.getElementById("popup-template").innerHTML;
-        var template = Handlebars.compile(source);
+  function init() {
+    var source = document.getElementById("popup-template").innerHTML;
+    var template = Handlebars.compile(source);
 
-        Mapsheet( { key: public_spreadsheet_url,
-            element: "map",
-            provider: Mapsheet.Providers.MapBox,
-            popupTemplate: template
-        });
-    }
+    Mapsheet( { key: public_spreadsheet_url,
+      element: "map",
+      provider: Mapsheet.Providers.MapBox,
+      popupTemplate: template
+    });
+  }
 
-    //      document.write("The published spreadsheet is located at <a target='_new' href='" + public_spreadsheet_url + "'>" + public_spreadsheet_url + "</a>");
+  //      document.write("The published spreadsheet is located at <a target='_new' href='" + public_spreadsheet_url + "'>" + public_spreadsheet_url + "</a>");
 </script>
 The source spreadsheet is located at <a href="https://docs.google.com/spreadsheet/ccc?key=0Ao3Ts9D8bHHpdEVFekdkZ0IySjVtSHFRTEVNQXNkMHc#gid=0">https://docs.google.com/spreadsheet/ccc?key=0Ao3Ts9D8bHHpdEVFekdkZ0IySjVtSHFRTEVNQXNkMHc#gid=0</a>
 
